@@ -10,7 +10,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            To start, autheticate with fb
+            Welkom bij de Stam X peiling voor de federale verkiezingen van 26 mei 2019
           </p>
         <Facebook/>
         </header>

@@ -8,6 +8,7 @@ export default class Facebook extends Component {
         isLoggedIn: false,
         userId: '',
         name: '',
+        first_name: ''
 
     };
 
@@ -17,7 +18,8 @@ export default class Facebook extends Component {
         this.setState({
             isLoggedIn: true,
             userId: response.userId,
-            name: response.name
+            name: response.name,
+            first_name: response.first_name
         });
     };
 
@@ -30,7 +32,7 @@ export default class Facebook extends Component {
             fbContent = (
 
                 <div>
-                    Welcome {this.state.name}
+                    Hallo {this.state.first_name}
                 </div>
 
             );
@@ -40,7 +42,7 @@ export default class Facebook extends Component {
             fbContent = (<FacebookLogin
             appId="270892293782831"
             autoLoad={true}
-            fields="name,email,picture"
+            fields="name,first_name,email,picture"
             onClick={this.componentClicked}
             callback={this.responseFacebook} />);
         }
@@ -48,4 +50,5 @@ export default class Facebook extends Component {
         return <div>{fbContent}</div>;
     }
 }
+
 
