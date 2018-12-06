@@ -12,14 +12,12 @@ export default class Vote extends Component {
 
         let voteContent
 
-        this.hasVoted(this.props.userId)
-
         if(this.state.hasVoted)
         {
             voteContent = (
 
                 <div>
-                    Bedankt om te stemmen
+                    Bedankt om te stemmen {this.props.id}
                 </div>
 
             );
@@ -30,7 +28,7 @@ export default class Vote extends Component {
             voteContent = (
 
                 <div>
-                    Je moet nog stemmen
+                    Je moet nog stemmen {this.props.id}
                 </div>
 
             );
@@ -42,10 +40,10 @@ export default class Vote extends Component {
         );
     }
 
-    hasVoted(props){
+    componentDidMount(){
 
-        fetch("http://stamxvote.azurewebsites.net/pollapi/auth/" + this.props.userId)
-            .then(res => res.json())
+        fetch("https://stamxvote.azurewebsites.net/pollapi/auth/" + Number(this.props.id))
+            .then(result => {return result.json();})
             .then((result) => {
                 this.setState({
 
@@ -53,6 +51,7 @@ export default class Vote extends Component {
 
                 });
             }
+            
             )
         }
     }

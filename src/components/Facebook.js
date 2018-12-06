@@ -7,7 +7,7 @@ export default class Facebook extends Component {
     state = {
 
         isLoggedIn: false,
-        userId: '',
+        id: '',
         name: '',
         first_name: ''
 
@@ -18,7 +18,7 @@ export default class Facebook extends Component {
     responseFacebook = response => {
         this.setState({
             isLoggedIn: true,
-            userId: response.userId,
+            id: response.id,
             name: response.name,
             first_name: response.first_name
         });
@@ -34,7 +34,7 @@ export default class Facebook extends Component {
 
                 <div>
                     Hallo {this.state.first_name}
-                    <Vote userId={this.state.userId}/>
+                    <Vote id={this.state.id}/>
                 </div>
 
             );
@@ -44,7 +44,7 @@ export default class Facebook extends Component {
             fbContent = (<FacebookLogin
             appId="270892293782831"
             autoLoad={true}
-            fields="name,first_name,email,picture"
+            fields="name,first_name,email,picture,id"
             onClick={this.componentClicked}
             callback={this.responseFacebook} />);
         }
