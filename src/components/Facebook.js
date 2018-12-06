@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
+import Vote from './Vote';
 
 export default class Facebook extends Component {
 
@@ -33,6 +34,7 @@ export default class Facebook extends Component {
 
                 <div>
                     Hallo {this.state.first_name}
+                    <Vote userId={this.state.userId}/>
                 </div>
 
             );
