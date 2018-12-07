@@ -7,6 +7,7 @@ export default class Facebook extends Component {
     state = {
 
         isLoggedIn: false,
+        wantsVote: false,
         id: '',
         name: '',
         first_name: ''
@@ -18,6 +19,7 @@ export default class Facebook extends Component {
     responseFacebook = response => {
         this.setState({
             isLoggedIn: true,
+            wantsVote: false,
             id: response.id,
             name: response.name,
             first_name: response.first_name
@@ -27,6 +29,7 @@ export default class Facebook extends Component {
     render() {
 
         let fbContent;
+        let chooseVote;
 
         if(this.state.isLoggedIn)
         {
@@ -34,7 +37,7 @@ export default class Facebook extends Component {
 
                 <div>
                     Hallo {this.state.first_name}
-                    <Vote id={this.state.id}/>
+                    <Vote id={this.state.id} setVote={this.setVote.bind(this)} wantsVote={this.state.wantsVote}/>
                 </div>
 
             );
@@ -48,8 +51,24 @@ export default class Facebook extends Component {
             onClick={this.componentClicked}
             callback={this.responseFacebook} />);
         }
+        if(this.state.wantsVote)
+        {
 
-        return <div>{fbContent}</div>;
+            chooseVote = "Ik wil stemmen"
+
+        }
+
+        return <div>{fbContent}{chooseVote}</div>;
+    }
+
+    setVote(e){
+
+        this.setState(
+            {
+                wantsVote: e
+            }
+        );
+
     }
 }
 

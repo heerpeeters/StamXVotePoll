@@ -13,23 +13,24 @@ export default class Vote extends Component {
 
         let voteContent
 
-        if(this.state.hasVoted)
+        if(this.state.hasVoted && !this.props.wantsVote)
         {
             voteContent = (
 
                 <div>
                     <p>Bedankt om te stemmen!</p>
-                    <p><Button bsStyle="default" bsSize="large" block>Stem wijzigen</Button></p>
+                    <p><Button bsStyle="default" bsSize="large" block onClick={(e) => this.setVote(e)}>Stem wijzigen</Button></p>
                 </div>
             );
         }
-        else
+        else if(!this.props.wantsVote)
         {
 
             voteContent = (
 
                 <div>
                     Je hebt nog geen stem uitgebracht
+                    <p><Button bsStyle="default" bsSize="large" block onClick={(e) => this.setVote(e)}>Stem uitbrengen</Button></p>
                 </div>
 
             );
@@ -55,6 +56,14 @@ export default class Vote extends Component {
             
             )
         }
+
+    setVote()
+    {
+
+        this.props.setVote(true);
+
+    }
+
     }
 
 //export default Vote;
