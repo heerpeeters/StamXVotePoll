@@ -10,7 +10,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <p>
-            Welkom bij de Stam X peiling voor de federale verkiezingen van 26 mei 2019
+            Welkom bij de Stam X peiling voor de federale verkiezingen van 26 mei 2019 tst
           </p>
           <img src={logo} className="App-logo" alt="logo" />
         <Facebook/>
