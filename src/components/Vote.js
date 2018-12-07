@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/lib/Button';
 
 export default class Vote extends Component {
 
@@ -17,9 +18,9 @@ export default class Vote extends Component {
             voteContent = (
 
                 <div>
-                    Bedankt om te stemmen {this.props.id}
+                    <p>Bedankt om te stemmen!</p>
+                    <p><Button bsStyle="default" bsSize="large" block>Stem wijzigen</Button></p>
                 </div>
-
             );
         }
         else
@@ -28,7 +29,7 @@ export default class Vote extends Component {
             voteContent = (
 
                 <div>
-                    Je moet nog stemmen {this.props.id}
+                    Je hebt nog geen stem uitgebracht
                 </div>
 
             );
