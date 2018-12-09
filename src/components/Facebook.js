@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import Vote from './Vote';
+import VoteCombobox from './VoteCombobox';
 
 export default class Facebook extends Component {
 
@@ -53,9 +54,11 @@ export default class Facebook extends Component {
         }
         if(this.state.wantsVote)
         {
+            chooseVote = (
 
-            chooseVote = "Ik wil stemmen"
+                <VoteCombobox userId={this.state.id}/>
 
+            );
         }
 
         return <div>{fbContent}{chooseVote}</div>;
@@ -70,6 +73,7 @@ export default class Facebook extends Component {
         );
 
     }
+
 }
 
 

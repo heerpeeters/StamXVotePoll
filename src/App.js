@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './img/stamx.jpg';
+import logo from './img/stamx.png';
 import './App.css';
 import Facebook from './components/Facebook';
 

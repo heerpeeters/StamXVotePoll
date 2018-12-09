@@ -44,7 +44,7 @@ export default class Vote extends Component {
 
     componentDidMount(){
 
-        fetch("https://stamxvote.azurewebsites.net/pollapi/auth/" + Number(this.props.id))
+        fetch("https://stamxvote.azurewebsites.net/pollapi/user/" + Number(this.props.id))
             .then(result => {return result.json();})
             .then((result) => {
                 this.setState({
