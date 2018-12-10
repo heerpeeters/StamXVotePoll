@@ -64,6 +64,13 @@ export default class Vote extends Component {
 
     }
 
+    setVoteFalse()
+    {
+
+        this.props.setVote(false);
+
     }
+
+}
 
 //export default Vote;

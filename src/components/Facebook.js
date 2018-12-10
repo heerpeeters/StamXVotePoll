@@ -56,7 +56,7 @@ export default class Facebook extends Component {
         {
             chooseVote = (
 
-                <VoteCombobox userId={this.state.id}/>
+                <VoteCombobox id={this.state.id} setVote={this.setVote.bind(this)}/>
 
             );
         }
