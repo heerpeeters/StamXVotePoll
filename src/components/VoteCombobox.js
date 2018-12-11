@@ -36,13 +36,14 @@ export default class VoteCombobox extends Component {
             filter='contains'
             value={this.state.value}
             onChange={this.handleComboboxChange}
+            className="VoteCombobox"
             />);
 
         chooseVote = (
             <div>
             <p>Kies een partij en druk op bevestigen om je stem uit te brengen</p>
             {comboBox}
-                <p className="Button"><Button bsStyle="default" bsSize="large" block onClick={(e) => this.commitVote(e)}>Stem wijzigen</Button></p>
+                <p className="Button"><Button bsStyle="default" bsSize="large" block onClick={(e) => this.commitVote(e)} className="Button">Stem wijzigen</Button></p>
             </div>
         );
 

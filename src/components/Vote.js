@@ -21,7 +21,7 @@ export default class Vote extends Component {
 
                 <div>
                     <p>Bedankt om te stemmen!</p>
-                    <p><Button bsStyle="default" bsSize="large" block onClick={(e) => this.setVote(e)}>Stem wijzigen</Button></p>
+                    <p><Button bsStyle="default" bsSize="large" block onClick={(e) => this.setVote(e)} className="Button">Stem wijzigen</Button></p>
                 </div>
             );
         }

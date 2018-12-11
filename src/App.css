@@ -7,11 +7,17 @@
   margin-top: 40px;
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
+  background-color: #35434f;
+  padding-left: 568px;
+  padding-right: 568px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
