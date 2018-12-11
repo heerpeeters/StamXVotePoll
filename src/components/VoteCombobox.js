@@ -9,7 +9,7 @@ export default class VoteCombobox extends Component {
 
         hasVoted: false,
         partyId: null,
-        userId: this.props.id
+        userId: this.props.id-1
 
     };
 

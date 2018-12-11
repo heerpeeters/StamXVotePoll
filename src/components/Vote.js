@@ -13,6 +13,8 @@ export default class Vote extends Component {
 
         let voteContent
 
+        this.fetchResult();
+
         if(this.state.hasVoted && !this.props.wantsVote)
         {
             voteContent = (
@@ -44,6 +46,24 @@ export default class Vote extends Component {
 
     componentDidMount(){
 
+        /*fetch("https://stamxvote.azurewebsites.net/pollapi/user/" + Number(this.props.id))
+            .then(result => {return result.json();})
+            .then((result) => {
+                this.setState({
+
+                    hasVoted: result
+
+                });
+            }
+            
+            )*/
+            this.fetchResult();
+        }
+
+
+    fetchResult()
+    {
+
         fetch("https://stamxvote.azurewebsites.net/pollapi/user/" + Number(this.props.id))
             .then(result => {return result.json();})
             .then((result) => {
@@ -55,19 +75,12 @@ export default class Vote extends Component {
             }
             
             )
-        }
+    }
 
     setVote()
     {
 
         this.props.setVote(true);
-
-    }
-
-    setVoteFalse()
-    {
-
-        this.props.setVote(false);
 
     }
 
